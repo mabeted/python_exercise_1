@@ -37,12 +37,10 @@ def fix_N(filename) :
 
 # main function
 def main():
-    # testing
-    fix_N(sys.argv[1])
     # save current data dir
     oldcwd = os.getcwd()
     # move to new data dir
-    os.chdir(sys.argv[2])
+    os.chdir(sys.argv[1])
     for filename in get_filenames('./'):
         fix_N(filename)
     #return to old wd
