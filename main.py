@@ -38,10 +38,16 @@ def fix_N(filename) :
 # main function
 def main():
     # testing
-    # print get_filenames(sys.argv[1])
-    # print has_N('Sex: N')
-    # print has_N('Sex: n')
     fix_N(sys.argv[1])
+    # save current data dir
+    oldcwd = os.getcwd()
+    # move to new data dir
+    os.chdir(sys.argv[2])
+    for filename in get_filenames('./'):
+        fix_N(filename)
+    #return to old wd
+    os.chdir(oldcwd)
+        
 
 # call main
 main()
